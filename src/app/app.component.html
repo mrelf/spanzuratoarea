@@ -1,2 +1,11 @@
-<the-word (guessWordEvent) = 'receiveGuessWord($event)'></the-word>
+<div [hidden]="submitted">
+    <the-word (guessWordEvent)='receiveGuessWord($event)'></the-word>
+</div>
+
+<button (click)='resetGame()'>Reseteaza jocul</button>
+
+<div>
+    <pick-letter></pick-letter>
+</div>
+
 {{ guessWord }}

@@ -1,0 +1,6 @@
+<form [formGroup]='pickLetter' (ngSubmit)='onSubmit()' novalidate>
+    <p>Ce litera contine cuvantul ales, dupa parerea ta? (nu conteaza daca literele sunt majuscule sau nu)</p>
+    <label for='pick-letter'>Alege o litera</label>
+    <input placeholder='Alege o litera' formControlName='letter' maxlength="1" />
+    <button type="submit" [disabled]='!pickLetter.valid'>Alege litera</button> 
+</form>

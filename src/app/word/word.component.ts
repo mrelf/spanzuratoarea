@@ -7,7 +7,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 
 export class WordComponent {
-    submitted: boolean = false;
     theWord: FormGroup;
     guessWord: string = '';
     @Output() guessWordEvent = new EventEmitter<string>();
@@ -17,7 +16,11 @@ export class WordComponent {
     
     createForm() {
         this.theWord = this.fb.group({
-            word: ['', Validators.compose([Validators.required, Validators.minLength(7), Validators.maxLength(15)])]
+            word: ['', Validators.compose([
+                            Validators.required, 
+                            Validators.minLength(7), Validators.maxLength(15), 
+                            Validators.pattern("^[a-zA-Z]+$")
+                        ])]
         })
     }
 
@@ -25,6 +28,5 @@ export class WordComponent {
         this.guessWord = this.theWord.controls.word.value;
         this.guessWordEvent.emit(this.guessWord);
         this.theWord.reset();
-        this.submitted = true;
     }
 }

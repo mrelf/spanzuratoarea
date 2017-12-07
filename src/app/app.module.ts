@@ -4,12 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
+import { PickLetterComponent } from './pick-letter/pick-letter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WordComponent
+    WordComponent,
+    PickLetterComponent
   ],
   imports: [
     BrowserModule,

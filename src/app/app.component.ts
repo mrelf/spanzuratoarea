@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  submitted: boolean = false;
   guessWord:string = '';
 
   receiveGuessWord($event) {
-    this.guessWord = $event
+    this.guessWord = $event.toLowerCase();
+    this.submitted = true;
+  }
+  resetGame() {
+    this.submitted = false;
   }
 }

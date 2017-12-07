@@ -1,4 +1,6 @@
-<form [formGroup] = 'theWord' (ngSubmit)='onSubmit()' novalidate [hidden]="submitted">
-    <input maxlength="15" placeholder="Cuvantul este..." formControlName='word' />
-    <button type="submit" [disabled]='!theWord.valid'>Salveaza</button>    
+<form [formGroup] = 'theWord' (ngSubmit)='onSubmit()' novalidate>
+    <p>Pentru a juca, gandeste-te la un cuvant intre 7 si 15 litere. Sunt permise doar litere.</p>
+    <label for='pick-word'>Alege un cuvant:</label>
+    <input id="pick-word" maxlength="15" placeholder="Cuvantul este..." formControlName='word' />
+    <button type="submit" [disabled]='!theWord.valid'>Start joc</button>    
 </form> 
