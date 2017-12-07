@@ -1,0 +1,4 @@
+<form [formGroup] = 'theWord' (ngSubmit)='onSubmit()' novalidate [hidden]="submitted">
+    <input maxlength="15" placeholder="Cuvantul este..." formControlName='word' />
+    <button type="submit" [disabled]='!theWord.valid'>Salveaza</button>    
+</form> 
